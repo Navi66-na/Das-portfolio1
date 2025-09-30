@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — DAS</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true' || false;
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        navLinks.style.display = isExpanded ? 'none' : 'flex';
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">DAS</div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">&#9776;</button>
+      <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container content">
+    <h2>About Me</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Hi — I'm <strong>DAS</strong>. I design and build modern websites focused on usability, performance, and visual polish. I enjoy working on creative projects and learning new web technologies.</p>
+        <p><strong>Skills</strong>: HTML, CSS, JavaScript, Responsive Design, Version Control, Deployment.</p>
+      </div>
+      <div class="about-img">
+        <img src="assets/profile.svg" alt="DAS illustration" class="profile-illustration">
+      </div>
+    </div>
+
+    <h3>Experience</h3>
+    <ul class="timeline">
+      <li><strong>2024 — Present</strong>: Freelance Web Developer</li>
+      <li><strong>2022 — 2024</strong>: Frontend Intern / Personal projects</li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <strong>DAS</strong></p>
+    </div>
+  </footer>
+</body>
+</html>

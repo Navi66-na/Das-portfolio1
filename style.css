@@ -1,0 +1,240 @@
+/* DAS Portfolio - White / Light Green / Dark Gray theme */
+:root{
+  --green:#5cb85c; /* Light Green */
+  --dark-gray:#2c3e50; /* Darker background/text */
+  --white:#ffffff;
+  --light-gray:#f4f4f4; /* For footer and light backgrounds */
+  --max-width:1100px;
+  --gap:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: Inter, Arial, sans-serif;
+  margin:0;
+  color:var(--dark-gray); /* Main text is dark gray */
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  width:90%;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:24px 0;
+}
+
+/* Header / Nav */
+header{
+  background:var(--white); /* White header */
+  color:var(--dark-gray);
+  border-bottom:2px solid var(--light-gray); /* Subtle border */
+}
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position: relative; /* For mobile menu positioning */
+}
+.logo{
+  font-weight:800;
+  font-size:1.2rem;
+  color:var(--green); /* Logo is green */
+}
+.menu-toggle {
+    display: none; /* Hide by default on desktop */
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--green);
+    padding: 0;
+}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.nav-links a{
+  color:var(--dark-gray); /* Nav links are dark gray */
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 10px;
+  border-radius:6px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a.active,
+.nav-links a:hover{
+  background:var(--light-gray); /* Light gray hover */
+  color:var(--green);
+}
+
+/* Hero */
+.hero{
+  display:flex;
+  gap:32px;
+  align-items:center;
+  padding:48px 0;
+  background:var(--white);
+  color:var(--dark-gray);
+  border-bottom:4px solid var(--green); /* Green accent border */
+}
+.hero-left{flex:1}
+.hero-left h1{font-size:2.2rem;margin-bottom:10px}
+.hero-left h1 span{color:var(--green)}
+.hero-left p{opacity:0.9;margin-bottom:16px}
+.hero-actions{display:flex;gap:12px}
+.btn{
+  background:var(--green); /* Green button */
+  color:var(--white);
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  display:inline-block;
+  border:2px solid var(--green);
+  font-weight:700;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover{
+  background: #4fa04f; /* Slightly darker green */
+  opacity:0.9;
+}
+.btn.ghost{
+  background:transparent;
+  color:var(--dark-gray);
+  border:2px solid var(--light-gray);
+}
+.btn.ghost:hover{
+  background:var(--light-gray);
+  color:var(--dark-gray);
+  border-color:var(--light-gray);
+}
+.btn.small{padding:8px 12px;font-size:0.9rem}
+
+/* Profile Image Styling - ensures image is a circle */
+.profile-illustration {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Placeholder style for missing images */
+    background: var(--light-gray);
+    border: 4px solid var(--green);
+}
+
+/* Quick cards */
+.quick{padding:40px 0;background:var(--light-gray);color:var(--dark-gray)} /* Light gray section background */
+.cards{display:flex;gap:16px;flex-wrap:wrap}
+.card{
+  background:var(--white); /* White cards */
+  color:var(--dark-gray);
+  padding:20px;border-radius:10px;flex:1;min-width:200px;
+  border:2px solid var(--green); /* Green border accent */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+.card h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    margin-top: 0;
+    color: var(--green); /* Make the card titles green */
+}
+
+/* Content area and About Teaser */
+.content{padding:48px 0}
+.about-teaser {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 2px solid var(--light-gray);
+}
+.about-grid{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:center}
+.about-img img{width:100%;max-width:320px}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.project-card{
+  background:var(--white);border:1px solid var(--light-gray);padding:18px;border-radius:10px;text-align:center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: border-color 0.2s;
+}
+.project-card:hover{
+  border-color:var(--green); /* Green hover border */
+}
+.project-card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:12px;
+  /* Placeholder style for missing images */
+  background: var(--light-gray);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.project-card h3 {
+    color: var(--dark-gray);
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+/* Contact form */
+form{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+label span{display:block;margin-bottom:6px;font-weight:600}
+input,textarea{padding:12px;border:2px solid var(--light-gray);border-radius:8px;font-size:1rem}
+input:focus,textarea:focus{outline:none;border-color:var(--green)}
+
+/* Footer */
+footer{padding:24px 0;background:var(--dark-gray);border-top:1px solid #eee;color:var(--white)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+footer a{color:var(--green);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* Responsive (Mobile) */
+@media (max-width:800px){
+  .hero{flex-direction:column;text-align:center}
+  .about-grid{grid-template-columns:1fr}
+  
+  /* Mobile Menu Styles */
+  .menu-toggle {
+    display: block; /* Show hamburger icon */
+  }
+  .nav-links {
+    display: none; /* Hidden by default. Needs JS to be toggled, but this is the starting state */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--dark-gray); /* Dark background for visibility */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    padding: 20px 0;
+    z-index: 1000;
+  }
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .nav-links a {
+    color: var(--white); /* White text on dark background */
+    display: block;
+  }
+  .nav-links a.active,
+  .nav-links a:hover {
+    background: var(--green); /* Green highlight */
+    color: var(--white);
+  }
+  
+  /* Image size adjustment */
+  .profile-illustration {
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+  }
+}

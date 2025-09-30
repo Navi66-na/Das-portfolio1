@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — DAS</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true' || false;
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        navLinks.style.display = isExpanded ? 'none' : 'flex';
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">DAS</div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">&#9776;</button>
+      <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container content">
+    <h2>Selected Projects</h2>
+    <div class="projects-grid">
+      <article class="project-card">
+        <img src="assets/project1.svg" alt="Project 1">
+        <h3>Project One</h3>
+        <p>A clean responsive landing page built with attention to performance.</p>
+        <a href="#" class="btn small">View project</a>
+      </article>
+      <article class="project-card">
+        <img src="assets/project2.svg" alt="Project 2">
+        <h3>Project Two</h3>
+        <p>An interactive UI with animations and smooth transitions.</p>
+        <a href="#" class="btn small">View project</a>
+      </article>
+      <article class="project-card">
+        <img src="assets/project3.svg" alt="Project 3">
+        <h3>Project Three</h3>
+        <p>A small web-app demo integrating forms and local storage.</p>
+        <a href="#" class="btn small">View project</a>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <strong>DAS</strong></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — DAS</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true' || false;
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        navLinks.style.display = isExpanded ? 'none' : 'flex';
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">DAS</div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">&#9776;</button>
+      <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container content">
+    <h2>Contact Me</h2>
+    <p>If you want to work together or just say hi, send a message — I typically respond within a few days.</p>
+
+    <form name="contact" method="POST" data-netlify="true" netlify>
+      <input type="hidden" name="form-name" value="contact">
+      <label>
+        <span>Your name</span>
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        <span>Your email</span>
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        <span>Message</span>
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <strong>DAS</strong></p>
+    </div>
+  </footer>
+</body>
+</html>
